@@ -459,7 +459,10 @@ $.extend(Selectize.prototype, {
 				return;
 			case KEY_RETURN:
 				if (self.isOpen && self.$activeOption) {
-					self.onOptionSelect({currentTarget: self.$activeOption});
+					if(self.value) {
+						self.onOptionSelect({currentTarget: self.$activeOption});
+					}
+					
 				}
 				e.preventDefault();
 				return;
